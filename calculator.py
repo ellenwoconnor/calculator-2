@@ -31,7 +31,7 @@ def calculate():
                 num2 = 1
             else:
                 print "That is not a valid entry."
-                break # how to continue prompting?
+                continue # go to the top of the while loop
 
 
             # create a dictionary with keys = operations
