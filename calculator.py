@@ -23,11 +23,11 @@ def calculate():
             # check validity of input
             if len(tokens) == 3:
                 func_name = tokens[0]
-                num1 = int(tokens[1])
-                num2 = int(tokens[2])
+                num1 = float(tokens[1])
+                num2 = float(tokens[2])
             elif len(tokens) == 2: 
                 func_name = tokens[0]
-                num1 = int(tokens[1])
+                num1 = float(tokens[1])
                 num2 = 1
             else:
                 print "That is not a valid entry."
