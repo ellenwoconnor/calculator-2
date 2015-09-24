@@ -23,33 +23,40 @@ def calculate():
             return
         else: 
             tokens = num_to_calc.split()
-            func_name = tokens[0]
+        if len(tokens) < 2 or len(tokens) > 3:
+            print "That is not a valid entry."
+            continue
+        func_name = tokens[0]
+        try: 
             num1 = float(tokens[1])
-            if len(tokens) > 2:
-                num2 = float(tokens[2])
-            else:
-                num2 = 1
+        except ValueError:
+            print "That is not a valid entry."
+            continue
+        if len(tokens) > 2:
+            num2 = float(tokens[2])
+        else:
+            num2 = 1
 
-            if func_name == '+':
-                print add(num1, num2)
-            elif func_name == '-':
-                print subtract(num1, num2)
-            elif func_name == '*':
-                print multiply(num1, num2)
-            elif func_name == '/':
-                print divide(num1, num2)
-            elif func_name == 'square':
-                print square(num1)
-            elif func_name == 'cube':
-                print cube(num1)
-            elif func_name == 'pow':
-                print power(num1, num2)
-            elif func_name == 'mod':
-                print mod(num1, num2)
-            else:
-                print "First element must be one of the following:"  
-                print token_list
-                continue 
+        if func_name == '+':
+            print add(num1, num2)
+        elif func_name == '-':
+            print subtract(num1, num2)
+        elif func_name == '*':
+            print multiply(num1, num2)
+        elif func_name == '/':
+            print divide(num1, num2)
+        elif func_name == 'square':
+            print square(num1)
+        elif func_name == 'cube':
+            print cube(num1)
+        elif func_name == 'pow':
+            print power(num1, num2)
+        elif func_name == 'mod':
+            print mod(num1, num2)
+        else:
+            print "First element must be one of the following:"  
+            print token_list
+            continue 
 
             # # check validity of input
             # if len(tokens) == 3:
