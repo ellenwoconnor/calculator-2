@@ -7,15 +7,14 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
+
 def calculate():
     """Runs calculator, takes no arguments
 
     Prompt user for operation, call function imported from arithmetic,
     and print result.
     """
-    token_list = "'+' '-'' '*' '/' 'square' 'cube' 'pow' 'or' 'mod'"
-    print "Enter an operation or enter 'q' to quit."
-    print "Valid operations include {}".format(token_list)
+    calculator_init()
 
     while True: 
         num_to_calc = raw_input("> ")
@@ -36,6 +35,8 @@ def calculate():
             num2 = float(tokens[2])
         else:
             num2 = 1
+
+
 
         if func_name == '+':
             print add(num1, num2)
@@ -58,36 +59,17 @@ def calculate():
             print token_list
             continue 
 
-            # # check validity of input
-            # if len(tokens) == 3:
-            #     func_name = tokens[0]
-            #     num1 = float(tokens[1])
-            #     num2 = float(tokens[2])
-            # elif tokens[0] == 'square' or tokens[0] == 'cube':
+def calculator_init():
+    token_list = "'+' '-'' '*' '/' 'square' 'cube' 'pow' 'or' 'mod'"
+    print "Enter an operation or enter 'q' to quit."
+    print "Valid operations include {}".format(token_list)
 
-            # else:
-            #     print "That is not a valid entry."
-            #     continue # go to the top of the while loop
-
-
-            # create a dictionary with keys = operations
-            # make global and pass to calculate???
-            # operations = {'+': add(num1, num2),
-            #               '-': subtract(num1, num2),
-            #               '*': multiply(num1, num2),
-            #               '/': divide(num1, num2),
-            #               'square': square(num1),
-            #               'cube': cube(num1),
-            #               'pow': power(num1, num2),
-            #               'mod': mod(num1, num2)}
-                                                    
-            # retrieve and call operation from dict
-            # if func_name in operations:
-            #     print operations[func_name]
-
-            # if func_name == "+":
-            #     print add(num1, num2)
-            # elif func_name == '-':
-            #     print subtract(num1, num2)
-            # elif func_name == 
 calculate()
+
+# thoughts for improvement...
+        # if len(tokens) == 3:
+        #     args = (num1, num2)
+        # elif len(tokens) == 2:
+        #     args = (num1)
+        
+        # add(args)
