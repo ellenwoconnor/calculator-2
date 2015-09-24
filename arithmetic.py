@@ -1,7 +1,6 @@
-def add(num1, num2):
-    return num1 + num2
-
-
+def add(number_list):
+    return reduce(lambda x, y: x+y, number_list)
+    
 def subtract(num1, num2):
     return num1 - num2
 

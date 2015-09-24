@@ -22,22 +22,28 @@ def calculate():
             return
         else: 
             tokens = num_to_calc.split()
-        if len(tokens) < 2 or len(tokens) > 3:
+        if len(tokens) < 2 or len(tokens) > 3 and tokens[0] != "+":
             print "That is not a valid entry."
             continue
         func_name = tokens[0]
-        try: 
-            num1 = float(tokens[1])
-            if len(tokens) > 2:
-                num2 = float(tokens[2])
-            else:
-                num2 = 1
+
+        number_list = []
+        try:
+            for i in range(1, (len(tokens))):
+                number_list.append(float(tokens[i]))
+            #print number_list
+        # try: 
+        #     num1 = float(tokens[1])
+        #     if len(tokens) > 2:
+        #         num2 = float(tokens[2])
+        #     else:
+        #         num2 = 1
         except ValueError:
             print "That is not a valid entry."
             continue
 
         if func_name == '+':
-            print add(num1, num2)
+            print add(number_list)
         elif func_name == '-':
             print subtract(num1, num2)
         elif func_name == '*':
