@@ -28,15 +28,13 @@ def calculate():
         func_name = tokens[0]
         try: 
             num1 = float(tokens[1])
+            if len(tokens) > 2:
+                num2 = float(tokens[2])
+            else:
+                num2 = 1
         except ValueError:
             print "That is not a valid entry."
             continue
-        if len(tokens) > 2:
-            num2 = float(tokens[2])
-        else:
-            num2 = 1
-
-
 
         if func_name == '+':
             print add(num1, num2)
